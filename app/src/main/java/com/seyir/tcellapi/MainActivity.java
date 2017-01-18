@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
         TCellAPI apiService = APIModule.connectTcellAPI().create(TCellAPI.class);
 
-        Call<ResponseSuccess> call = apiService.sendSMS("974e350d-6f89-405a-abd1-7e3eba046b4b", "5317400832", to, content);
+        Call<ResponseSuccess> call = apiService.sendSMS("buraya sms için aldığınız api_key", "buraya cep numaranız", to, content);
         call.enqueue(new Callback<ResponseSuccess>() {
             @Override
             public void onResponse(Call<ResponseSuccess> call, Response<ResponseSuccess> response) {
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
         TCellAPI apiService = APIModule.connectTcellAPI().create(TCellAPI.class);
 
-        Call<ResponseSuccess> call = apiService.makeCall("569a2982-a9f2-4f0e-b7e0-cbb9b4131a52", "5317400832", to, content);
+        Call<ResponseSuccess> call = apiService.makeCall("buraya çağrı için aldığınız api_key", "buraya cep numaranız", to, content);
         call.enqueue(new Callback<ResponseSuccess>() {
             @Override
             public void onResponse(Call<ResponseSuccess> call, Response<ResponseSuccess> response) {
@@ -121,7 +121,7 @@ public class MainActivity extends AppCompatActivity {
 
         TCellAPI apiService = APIModule.connectTcellAPI().create(TCellAPI.class);
 
-        Call<ResponseSuccess> call = apiService.searchDevice("c938fbdd-77f3-4f16-bc4e-da0fd8957a41", "5317400832", 155);
+        Call<ResponseSuccess> call = apiService.searchDevice("buraya cihaz için aldığınız api_key", "buraya cep numaranız", 155);
         call.enqueue(new Callback<ResponseSuccess>() {
             @Override
             public void onResponse(Call<ResponseSuccess> call, Response<ResponseSuccess> response) {
@@ -152,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
     private void getDeviceDetailsTask(String tickedId) {
 
         TCellAPI apiService = APIModule.connectTcellAPI().create(TCellAPI.class);
-        Call<DeviceSearch> call = apiService.getDeviceDetails("c938fbdd-77f3-4f16-bc4e-da0fd8957a41", tickedId);
+        Call<DeviceSearch> call = apiService.getDeviceDetails("buraya cihaz için aldığınız api_key", tickedId);
         call.enqueue(new Callback<DeviceSearch>() {
             @Override
             public void onResponse(Call<DeviceSearch> call, Response<DeviceSearch> response) {
